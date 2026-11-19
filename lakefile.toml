@@ -1,0 +1,6 @@
+name = "OctImaging"
+version = "0.1.0"
+defaultTargets = ["OctImaging"]
+
+[[lean_lib]]
+name = "OctImaging"
