@@ -2,25 +2,29 @@
 
 光学相干断层扫描（OCT）综述论文 + Lean 4 形式化核验骨架。
 
+**English version: [README.en.md](./README.en.md)**
+
 本仓库沉淀「光学相干断层扫描：从低相干干涉测量到视网膜微血管成像」课题的
-研究内容、结论与可机器核验的形式化命题，按语义化版本持续维护。
+研究内容、结论与可机器核验的形式化命题，按语义化版本持续维护，
+并提供中英双语论文与文档。
 
 ## 目录结构
 
 ```
 oct-imaging-review/
 ├── paper/
-│   └── oct_imaging_review.md   # 完整综述论文
+│   ├── oct_imaging_review.md    # 中文综述
+│   └── oct_imaging_review_en.md # English review
 ├── OctImaging.lean             # Lean 库根模块
 ├── OctImaging/
 │   ├── Basic.lean
-│   └── Proofs.lean             # 时间线 / 扫描速率 / 波长与分辨率记录形式化
+│   └── Proofs.lean             # 时间线 / 扫描速率 / 波长与分辨率记录
 ├── lakefile.toml
 ├── lean-toolchain
 ├── lake-manifest.json
 ├── .github/workflows/          # Lean CI
 ├── CHANGELOG.md
-└── README.md
+└── README.md / README.en.md
 ```
 
 ## 论文要点
@@ -51,6 +55,13 @@ lake build
 
 > 光物理与临床结论以同行评审文献为准；本工程不把临床诊断命题当作
 > 可由算术证明的陈述。工程内 `sorry` / `admit` / `axiom` 数量为 0。
+
+## 双语版本管理
+
+- 论文：`paper/oct_imaging_review.md`（中文）与 `paper/oct_imaging_review_en.md`（英文）内容对齐；
+- 文档：`README.md`（中文）与 `README.en.md`（英文）互相链接；
+- 变更日志：`CHANGELOG.md` 同时保留中英两段说明；
+- 论文修订时应同步更新两个语言版本，提交信息在 subject 中注明 `docs(zh)` / `docs(en)`。
 
 ## 版本维护
 
